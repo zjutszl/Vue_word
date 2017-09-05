@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <title>Javascipt编程入门·新大</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="./public/vue.min.js"></script>
+    <link rel="stylesheet" href="./public/style.css">
+    <script type="text/javascript" src="public/words-right.js"></script>
+    <script type="text/javascript" src="public/words-wrong-list.js"></script>
+</head>
+
+<body>
+    <div id="app" class="center-block">
+        <div class="bg-primary">
+            <p>新生大学 · Javascipt编程入门 · 同学们的心里话</p>
+        </div>
+        <div class="container">
+            <div class="col-md-2">
+                <div class="panel panel-warning">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                            格式存在问题
+                        </h3>
+                    </div>
+                    <div class="panel-body" v-for="jsonfile in wrongList">
+                        {{ jsonfile }}
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div v-for="item in wordsList">
+                    <div class="media">
+                        <div class="media-left">
+                            <a href="#">
+                                <img class="avatar media-object" v-bind:src="item.avatar" alt="...">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    {{ item.name }}
+                                </div>
+                                <div class="panel-body">
+                                    {{ item.words }}
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+</body>
+<script>
+    var app = new Vue({
+        el: "#app",
+        data: {
+            wordsList: wordsList,
+            wrongList: wrongList
+        }
+    })
+
+</script>
+
+</html>
