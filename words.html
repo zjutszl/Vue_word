@@ -2,39 +2,23 @@
 <html lang="zh-CN">
 
 <head>
+    <title>Javascipt编程入门·新大</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="./public/vue.min.js"></script>
+    <link rel="stylesheet" href="./public/style.css">
     <script type="text/javascript" src="public/words-right.js"></script>
     <script type="text/javascript" src="public/words-wrong-list.js"></script>
 </head>
 
 <body>
     <div id="app" class="center-block">
-        <div class="page-header">
-            <h1>Example page header <small>Subtext for header</small></h1>
+        <div class="bg-primary">
+            <p>新生大学 · Javascipt编程入门 · 同学们的心里话</p>
         </div>
         <div class="container">
-            <div class="col-md-6 col-md-offset-2">
-                <div v-for="item in wordsList">
-                    <div class="media">
-                        <div class="media-left">
-                            <a href="#">
-                            <img class="media-object avatar" v-bind:src="item.avatar" alt="...">
-                            </a>
-                        </div>
-                        <div class="media-body">
-                            <h4 class="media-heading">
-                                {{ item.name }}
-                            </h4>
-                            {{ item.words }}
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-2 col-md-offset-1">
+            <div class="col-md-2">
                 <div class="panel panel-warning">
                     <div class="panel-heading">
                         <h3 class="panel-title">
@@ -46,6 +30,28 @@
                     </div>
                 </div>
             </div>
+            <div class="col-md-6">
+                <div v-for="item in wordsList">
+                    <div class="media">
+                        <div class="media-left">
+                            <a href="#">
+                                <img class="avatar media-object" v-bind:src="item.avatar" alt="...">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    {{ item.name }}
+                                </div>
+                                <div class="panel-body">
+                                    {{ item.words }}
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 
